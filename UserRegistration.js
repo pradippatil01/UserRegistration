@@ -49,6 +49,19 @@ isValidEmailId = (EMAIL_ID) => {
     }
 }
 
+/**
+ * isValidMobileNumber valid user Mobile number
+ */
+isValidMobileNumber = (MOBILE_NUMBER) => {
+    const MOBILE_REGEX =  new RegExp(`^(\\+?\\d{1,3})[ ]([0-9]{10})$`);
+    if (MOBILE_REGEX.test(MOBILE_NUMBER)) {
+        console.log('mobile number  is valid ');
+    }
+    else {
+        console.log('mobile number is not valid');
+    }
+}
+
 console.log('Welcome to User Registration Program');
 const FIRSTNAME = prompt('enter first name :- ');
 isValidFirstName(FIRSTNAME);
@@ -56,3 +69,5 @@ const LASTNAME = prompt('enter last name :- ');
 isValidLastName(LASTNAME);
 const EMAIL_ID = prompt('enter email id :- ');
 isValidEmailId(EMAIL_ID);
+const MOBILE_NUMBER = prompt('enter mobile number :- ');
+isValidMobileNumber(MOBILE_NUMBER);
