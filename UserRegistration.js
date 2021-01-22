@@ -6,10 +6,6 @@
 *   @file      : userRegistration.js
 *   @version   : v15.6.0
 ***************************************************************************/
-
-/**
- * @param {firstName} holds input provided by user for firstName;
- */
 const prompt = require('prompt-sync')();
 
 /**
@@ -40,7 +36,7 @@ isValidLastName = (LASTNAME) => {
  * isValidEmail valid user Email id
  */
 isValidEmailId = (EMAIL_ID) => {
-    const EMAIL_REGEX =  new RegExp(`^([a-zA-Z0-9]+[+_*.-]?[a-zA-Z0-9]+)+@[a-zA-Z0-9-]+.[a-z]{2,3}.[a-z]{2,3}$`);
+    const EMAIL_REGEX = new RegExp(`^([a-zA-Z0-9]+[+_*.-]?[a-zA-Z0-9]+)+@[a-zA-Z0-9-]+.[a-z]{2,3}.[a-z]{2,3}$`);
     if (EMAIL_REGEX.test(EMAIL_ID)) {
         console.log('email id  is valid ');
     }
@@ -53,12 +49,25 @@ isValidEmailId = (EMAIL_ID) => {
  * isValidMobileNumber valid user Mobile number
  */
 isValidMobileNumber = (MOBILE_NUMBER) => {
-    const MOBILE_REGEX =  new RegExp(`^(\\+?\\d{1,3})[ ]([0-9]{10})$`);
+    const MOBILE_REGEX = new RegExp(`^(\\+?\\d{1,3})[ ]([0-9]{10})$`);
     if (MOBILE_REGEX.test(MOBILE_NUMBER)) {
         console.log('mobile number  is valid ');
     }
     else {
         console.log('mobile number is not valid');
+    }
+}
+
+/**
+ * isValidPassword valid password
+ */
+isValidPassword = (PASSWORD) => {
+    const PWD_REGEX = new RegExp(`^[A-Z]{8,}$`);
+    if (PWD_REGEX.test(PASSWORD)) {
+        console.log('password  is valid ');
+    }
+    else {
+        console.log('password is not valid');
     }
 }
 
@@ -71,3 +80,5 @@ const EMAIL_ID = prompt('enter email id :- ');
 isValidEmailId(EMAIL_ID);
 const MOBILE_NUMBER = prompt('enter mobile number :- ');
 isValidMobileNumber(MOBILE_NUMBER);
+const PASSWORD = prompt('enter password :- ');
+isValidPassword(PASSWORD);
