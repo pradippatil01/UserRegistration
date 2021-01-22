@@ -15,9 +15,9 @@ const prompt = require('prompt-sync')();
 /**
  * isValidFirstName valid user first name
  */
-isValidFirstName = (fistName) => {
+isValidFirstName = (FIRSTNAME) => {
     const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
-    if (NAME_REGEX.test(fistName)) {
+    if (NAME_REGEX.test(FIRSTNAME)) {
         console.log('first name is valid ');
     }
     else {
@@ -27,9 +27,9 @@ isValidFirstName = (fistName) => {
 /**
  * isValidlastName valid user last name
  */
-isValidLastName = (lastName) => {
+isValidLastName = (LASTNAME) => {
     const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
-    if (NAME_REGEX.test(lastName)) {
+    if (NAME_REGEX.test(LASTNAME)) {
         console.log('last name is valid ');
     }
     else {
@@ -39,9 +39,9 @@ isValidLastName = (lastName) => {
 /**
  * isValidEmail valid user Email id
  */
-isValidEmailId = (emailID) => {
+isValidEmailId = (EMAIL_ID) => {
     const EMAIL_REGEX =  new RegExp(`^([a-zA-Z0-9]+[+_*.-]?[a-zA-Z0-9]+)+@[a-zA-Z0-9-]+.[a-z]{2,3}.[a-z]{2,3}$`);
-    if (EMAIL_REGEX.test(emailID)) {
+    if (EMAIL_REGEX.test(EMAIL_ID)) {
         console.log('email id  is valid ');
     }
     else {
@@ -50,9 +50,9 @@ isValidEmailId = (emailID) => {
 }
 
 console.log('Welcome to User Registration Program');
-const firstName = prompt('enter first name :- ');
-isValidFirstName(firstName);
-const lastName = prompt('enter last name :- ');
-isValidLastName(lastName);
-const emailID = prompt('enter email id :- ');
-isValidEmailId(emailID);
+const FIRSTNAME = prompt('enter first name :- ');
+isValidFirstName(FIRSTNAME);
+const LASTNAME = prompt('enter last name :- ');
+isValidLastName(LASTNAME);
+const EMAIL_ID = prompt('enter email id :- ');
+isValidEmailId(EMAIL_ID);
