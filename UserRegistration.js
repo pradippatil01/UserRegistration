@@ -36,9 +36,23 @@ isValidLastName = (lastName) => {
         console.log('last name is not valid');
     }
 }
+/**
+ * isValidEmail valid user Email id
+ */
+isValidEmailId = (emailID) => {
+    const EMAIL_REGEX =  new RegExp(`^([a-zA-Z0-9]+[+_*.-]?[a-zA-Z0-9]+)+@[a-zA-Z0-9-]+.[a-z]{2,3}.[a-z]{2,3}$`);
+    if (EMAIL_REGEX.test(emailID)) {
+        console.log('email id  is valid ');
+    }
+    else {
+        console.log('email id is not valid');
+    }
+}
 
 console.log('Welcome to User Registration Program');
 const firstName = prompt('enter first name :- ');
 isValidFirstName(firstName);
 const lastName = prompt('enter last name :- ');
 isValidLastName(lastName);
+const emailID = prompt('enter email id :- ');
+isValidEmailId(emailID);
