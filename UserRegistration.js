@@ -13,18 +13,32 @@
 const prompt = require('prompt-sync')();
 
 /**
- * isValidFirstName valid user firstName
+ * isValidFirstName valid user first name
  */
 isValidFirstName = (fistName) => {
     const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
     if (NAME_REGEX.test(fistName)) {
-        console.log('firstname is valid ');
+        console.log('first name is valid ');
     }
     else {
-        console.log('firstname is not valid');
+        console.log('first name is not valid');
+    }
+}
+/**
+ * isValidlastName valid user last name
+ */
+isValidLastName = (lastName) => {
+    const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
+    if (NAME_REGEX.test(lastName)) {
+        console.log('last name is valid ');
+    }
+    else {
+        console.log('last name is not valid');
     }
 }
 
 console.log('Welcome to User Registration Program');
-const firstName = prompt('enter firstName :- ');
+const firstName = prompt('enter first name :- ');
 isValidFirstName(firstName);
+const lastName = prompt('enter last name :- ');
+isValidLastName(lastName);
