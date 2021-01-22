@@ -62,9 +62,9 @@ isValidMobileNumber = (MOBILE_NUMBER) => {
  * isValidPassword valid password
  */
 isValidPassword = (PASSWORD) => {
-    const PWD_REGEX = new RegExp(`^(?=.*[a-z])(?=.*[A-Z]).{8,}$`);
+    const PWD_REGEX = new RegExp(`^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,}$`);
     if (PWD_REGEX.test(PASSWORD)) {
-        console.log('password  is valid ');
+        console.log('password is valid ');
     }
     else {
         console.log('password is not valid');
