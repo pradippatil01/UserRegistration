@@ -7,12 +7,12 @@
 *   @version   : v15.6.0
 ***************************************************************************/
 const prompt = require('prompt-sync')();
+const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
 
 /**
  * isValidFirstName valid user first name
  */
 isValidFirstName = (FIRSTNAME) => {
-    const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
     if (NAME_REGEX.test(FIRSTNAME)) {
         console.log('first name is valid ');
     }
@@ -24,7 +24,6 @@ isValidFirstName = (FIRSTNAME) => {
  * isValidlastName valid user last name
  */
 isValidLastName = (LASTNAME) => {
-    const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
     if (NAME_REGEX.test(LASTNAME)) {
         console.log('last name is valid ');
     }
