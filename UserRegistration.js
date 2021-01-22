@@ -8,6 +8,16 @@
 ***************************************************************************/
 const prompt = require('prompt-sync')();
 const NAME_REGEX = new RegExp(`^[A-Z]{1}[a-zA-Z]{2,}$`);
+var validEmailSample = [
+    "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com",
+    "abc111@abc.com", "abc*100@abc.net", "abc.100@abc.com.au",
+    "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com"];
+
+var invalidEmailSample = [
+    "abc", "abc@.com.my", "abc123@gmail.a",
+    "abc123@.com", "abc123@.com.com", ".abc@abc.com",
+    "abc()*@gmail.com", "abc@%*.com", "abc.@gmail.com",
+    "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au"];
 
 /**
  * isValidFirstName valid user first name
@@ -35,7 +45,7 @@ isValidLastName = (LASTNAME) => {
  * isValidEmail valid user Email id
  */
 isValidEmailId = (EMAIL_ID) => {
-    const EMAIL_REGEX = new RegExp(`^([a-zA-Z0-9]+[+_*.-]?[a-zA-Z0-9]+)+@[a-zA-Z0-9-]+.[a-z]{2,3}.[a-z]{2,3}$`);
+    const EMAIL_REGEX = new RegExp(`^([A-Za-z0-9\\d-_*\\+]+)(\\.[A-Za-z\\d-_]+)?@([a-zA-Z\\d]+)\\.([a-zA-Z]{2,4})(\\.[A-Za-z]{2,4})?$`);
     if (EMAIL_REGEX.test(EMAIL_ID)) {
         console.log('email id  is valid ');
     }
@@ -70,14 +80,26 @@ isValidPassword = (PASSWORD) => {
     }
 }
 
+checkEmail = (emailSample) => {
+    for (let i = 0; i < emailSample.length; i++) {
+        let email_ID = emailSample[i];
+        isValidEmailId(email_ID);
+    }
+}
+
 console.log('Welcome to User Registration Program');
 const FIRSTNAME = prompt('enter first name :- ');
 isValidFirstName(FIRSTNAME);
 const LASTNAME = prompt('enter last name :- ');
 isValidLastName(LASTNAME);
-const EMAIL_ID = prompt('enter email id :- ');
-isValidEmailId(EMAIL_ID);
 const MOBILE_NUMBER = prompt('enter mobile number :- ');
 isValidMobileNumber(MOBILE_NUMBER);
 const PASSWORD = prompt('enter password :- ');
 isValidPassword(PASSWORD);
+const EMAIL_ID = prompt('enter email id :- ');
+isValidEmailId(EMAIL_ID);
+/**
+ * check email Sample
+ */
+checkEmail(validEmailSample);
+checkEmail(invalidEmailSample);
