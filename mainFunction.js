@@ -1,18 +1,12 @@
 const usr = require('./UserRegistration');
-const prompt = require('prompt-sync')();
 
 mainFunction = () => {
     console.log('Welcome to User Registration Program');
-    const FIRSTNAME = prompt('enter first name :- ');
-    usr.isValidFirstName(FIRSTNAME);
-    const LASTNAME = prompt('enter last name :- ');
-    usr.isValidLastName(LASTNAME);
-    const MOBILE_NUMBER = prompt('enter mobile number :- ');
-    usr.isValidMobileNumber(MOBILE_NUMBER);
-    const PASSWORD = prompt('enter password :- ');
-    usr.isValidPassword(PASSWORD);
-    const EMAIL_ID = prompt('enter email id :- ');
-    usr.isValidEmailId(EMAIL_ID);
+    usr.isValidFirstName();
+    usr.isValidLastName();
+    usr.isValidMobileNumber();
+    usr.isValidPassword();
+    usr.isValidEmailId();
 
     const validEmailSample = [
         "abc-100@yahoo.com", "abc.100@yahoo.com", "abc@yahoo.com",

@@ -17,63 +17,68 @@ class UserRegistration {
     /**
      * isValidFirstName valid user first name
      */
-    isValidFirstName = (FIRSTNAME) => {
+    isValidFirstName = () => {
+        const FIRSTNAME = prompt('enter first name :- ');
         if (NAME_REGEX.test(FIRSTNAME)) {
             console.log('first name is valid ');
         }
         else {
-            const FIRSTNAME = prompt('enter valid first name :- ');
-            this.isValidFirstName(FIRSTNAME);
+            console.log('enter valid first name :- ');
+            this.isValidFirstName();
         }
     }
     /**
      * isValidlastName valid user last name
      */
-    isValidLastName = (LASTNAME) => {
+    isValidLastName = () => {
+        const LASTNAME = prompt('enter last name :- ');
         if (NAME_REGEX.test(LASTNAME)) {
             console.log('last name is valid ');
         }
         else {
-            const LASTNAME = prompt('enter valid last name :- ');
-            this.isValidLastName(LASTNAME);
+            console.log('enter valid last name :- ');
+            this.isValidLastName();
         }
     }
     /**
      * isValidEmail valid user Email id
      */
-    isValidEmailId = (EMAIL_ID) => {
+    isValidEmailId = () => {
+        const EMAIL_ID = prompt('enter email id :- ');
         if (EMAIL_REGEX.test(EMAIL_ID)) {
             console.log('email id  is valid ');
         }
         else {
-            const EMAIL_ID = prompt('enter valid email id :- ');
-            this.isValidEmailId(EMAIL_ID);
+            console.log('enter valid email id :- ');
+            this.isValidEmailId();
 
         }
     }
     /**
      * isValidMobileNumber valid user Mobile number
      */
-    isValidMobileNumber = (MOBILE_NUMBER) => {
+    isValidMobileNumber = () => {
+        const MOBILE_NUMBER = prompt('enter mobile number :- ');
         if (MOBILE_REGEX.test(MOBILE_NUMBER)) {
             console.log('mobile number  is valid ');
         }
         else {
-            const MOBILE_NUMBER = prompt('enter valid mobile number :- ');
-            this.isValidMobileNumber(MOBILE_NUMBER);
+            console.log('enter valid mobile number :- ');
+            this.isValidMobileNumber();
         }
     }
 
     /**
      * isValidPassword valid password
      */
-    isValidPassword = (PASSWORD) => {
+    isValidPassword = () => {
+        const PASSWORD = prompt('enter password :- ');
         if (PWD_REGEX.test(PASSWORD)) {
             console.log('password is valid ');
         }
         else {
-            const PASSWORD = prompt('enter valid password :- ');
-            this.isValidPassword(PASSWORD);
+            console.log('enter valid password :- ');
+            this.isValidPassword();
 
         }
     }
